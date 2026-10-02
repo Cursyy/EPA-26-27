@@ -8,3 +8,65 @@ You passed in 15 to ./ex2.sh
 There are 117 processes running on this machine
 Maximum number of processes exceeded
 LOG DATE ~~~2026-10-02_12-51-35~~~
+You passed in 15 to ./ex3.sh
+Count: 1
+Count: 2
+Count: 3
+found the third item
+Count: 4
+Count: 5
+You passed in 15 to ./ex3.sh
+There are 118 processes running on this machine
+Maximum number of processes exceeded
+LOG DATE ~~~2026-10-02_13-33-41~~~
+Count: 1
+Count: 2
+Count: 3
+found the third item
+Count: 4
+Count: 5
+You passed in 15 to ./ex3.sh
+There are 115 processes running on this machine
+Maximum number of processes exceeded
+LOG DATE ~~~2026-10-02_13-37-20~~~
+You passed in 15 to ./ex3.sh
+Count: 1
+Count: 2
+Count: 3
+found the third item
+Count: 4
+Count: 5
+You passed in 15 to ./ex3.sh
+There are 115 processes running on this machine
+Maximum number of processes exceeded
+LOG DATE ~~~2026-10-02_13-40-28~~~
+Count: 1
+Count: 2
+Count: 3
+found the third item
+Count: 4
+Count: 5
+You passed in 15 to ./ex3.sh
+There are 117 processes running on this machine
+Maximum number of processes exceeded
+LOG DATE ~~~2026-10-02_13-41-41~~~
+Count: 1
+Count: 2
+Count: 3
+found the third item
+Count: 4
+Count: 5
+You passed in 15 to ./ex3.sh
+There are 120 processes running on this machine
+Maximum number of processes exceeded
+LOG DATE ~~~2026-10-02_13-45-22~~~
+Count: 1
+Count: 2
+Count: 3
+found the third item
+Count: 4
+Count: 5
+You passed in 15 to ./ex3.sh
+There are 117 processes running on this machine
+Maximum number of processes exceeded
+LOG DATE ~~~2026-10-02_13-47-27~~~
