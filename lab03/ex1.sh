@@ -23,12 +23,19 @@ else
 	echo "You passed in $1 to $0"
 fi
 
+if [[ ! "$1" =~ ^[0-9]+$ ]]; then
+        echo "Usage: $0 MAX_PROCESSES (whole number)"
+        exit 1
+fi
+
+
 # heres a brand new command: 
 # it calls ps -ef, then pipes it into word counter
 # then stores the result in ct
 ct=$(ps -ef | wc -l)
 echo "There are $ct processes running on this machine"
-if [ $ct -lt $1 ]; then
+
+if [ $1 -ge $ct ]; then
 	echo "The maximum number of processes NOT exceeded"
 else
 	echo "Maximum number of processes exceeded"

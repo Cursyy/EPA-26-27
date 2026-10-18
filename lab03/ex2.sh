@@ -19,8 +19,14 @@ done
 # the first, second etc parameter into this script
 if [ -z $1 ]; then
 	echo "You didn't pass any paraemters to $0" >> out.log
+	exit 1
 else
 	echo "You passed in $1 to $0" >> out.log
+fi
+
+if [[ ! "$1" =~ ^[0-9]+$ ]]; then
+        echo "Usage: $0 MAX_PROCESSES (whole number)"
+        exit 1
 fi
 
 # heres a brand new command: 
@@ -28,7 +34,9 @@ fi
 # then stores the result in ct
 ct=$(ps -ef | wc -l)
 echo "There are $ct processes running on this machine" >> out.log
-if [[ $ct -lt $1 ]]; then
+
+
+if [[ $1 -ge $ct ]]; then
 	echo "The maximum number of processes NOT exceeded" >> out.log
 else
 	echo "Maximum number of processes exceeded" >> out.log

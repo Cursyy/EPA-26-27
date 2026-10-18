@@ -2,11 +2,18 @@
 
 # this is a comment
 
+if [[ ! "$1" =~ ^[0-9]+$ ]]; then
+        echo "Usage: $0 MAX_PROCESSES (whole number)"
+        exit 1
+fi
+
 read -r  -p "Input 1 for terminal display or 0 to store log in file: " choice
 echo 
-while [[ $choice -ne 1 && $choice -ne 0 ]]; do
+
+while [[ ! "$choice" =~ ^[01]$ ]]; do
+
 	echo "Wrong input, try again :("
-	read -p "Input 1 for terminal display or 0 to store log in file: " choice
+	read -r -p "Input 1 for terminal display or 0 to store log in file: " choice
 done
 
 choice_check(){
@@ -44,7 +51,7 @@ fi
 # then stores the result in ct
 ct=$(ps -ef | wc -l)
 choice_check $choice "There are $ct processes running on this machine"
-if [[ $ct -lt $1 ]]; then
+if [[ $1 -ge $ct ]]; then
 	choice_check $choice "The maximum number of processes NOT exceeded"
 else
 	choice_check $choice "Maximum number of processes exceeded"
