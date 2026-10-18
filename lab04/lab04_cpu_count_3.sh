@@ -14,6 +14,7 @@ fi
 if [ "$#" -gt 1 ]; then #checking is the user passed no more then 1 parameter 
 	user_help
 	exit 1
+fi
 
 num_required=$1
 
@@ -24,10 +25,11 @@ while ! [[ "$num_required" =~ ^[0-9]+$ ]]; do #keep asking until a whole number 
 	read -r -p "Enter the minimum number of CPU cores required: " num_required || exit 1
 done
 
-if [[ $num_cpu -ge $required ]]; then #checking if num_cpu is greater or equal to user input
+if [[ $num_cpu -ge $num_required ]]; then #checking if num_cpu is greater or equal to user input
         printf "OK: this VM has %d cores and %d are required\n" "$num_cpu" "$num_required"
 else
         printf "Error: cpu_num is not enough (%d found, %d required)\n" "$num_cpu" "$num_required"
+	exit 1
 fi
 
 echo

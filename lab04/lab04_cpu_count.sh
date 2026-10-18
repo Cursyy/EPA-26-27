@@ -2,7 +2,13 @@
 
 num_cpu=$(grep processor /proc/cpuinfo | wc -l)
 
-if [[ $num_cpu -ge $1 ]]; then #checking if num_cpu is greater or equal to user input
+if [ "$#" -ne 1 ]; then
+        echo "Usage: lab04_cpu_count_1.sh [MAX_NUM_CORES]"
+        exit 1
+elif ! [[ "$1" =~ ^[0-9]+$ ]]; then
+        echo "Error: MAX_NUM_CORES must be a positive whole number"
+        exit 1
+elif [[ $num_cpu -ge $1 ]]; then
         echo "OK"
 else
         echo "Error: cpu_num is not enough"
